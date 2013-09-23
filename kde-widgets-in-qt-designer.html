@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>About</title>
+  <title>KDE Widgets in QT Designer</title>
   <meta name="author" content="Jared Kibele">
 
 
@@ -1754,12 +1754,40 @@ init_mathjax();
   <div id="main">
     <div id="content">
 <div>
-  <article role="article">
-    <header>
-      <h1 class="entry-title">About</h1>
-    </header>
-    <p>I'm a PhD Candidate at University of Auckland's Leigh Marine Lab. I'm a GIS / remote sensing / ecology nerd surrounded mainly by pure ecology nerds. I'm building open source software tools for benthic habitat mapping and I don't have anyone on hand to talk to about writing Python code and fighting with massive multispectral image data sets. I'm looking to connect with others who write code to battle it out with spatial data, rasters, and statistical methods.</p>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">KDE Widgets in QT Designer</h1>
+      <p class="meta"><time datetime="2013-09-23T00:00:00" pubdate>Mon 23 September 2013</time></p>
+</header>
+
+  <div class="entry-content"><p>I wanted to use a KDE KEditListWidget in a PyQT4 GUI I'm building with QT Designer. I could add the widget just fine but I was getting an import error when tried to run the generated code. I had a bit of difficulty tracking down a solution but it was simple once I figure it out.</p>
+<p>The normal procedure here is to use QT Designer to build the GUI, save the .ui file, and then use pyuic4 to convert the file to Python code as described <a href="http://pyqt.sourceforge.net/Docs/PyQt4/designer.html">here</a>. I did that after generating my <code>.ui</code> file but the resulting <code>.py</code> file had incorrect import statements. It had something like:</p>
+<div class="highlight"><pre>    <span class="kn">from</span> <span class="nn">keditlistwidget</span> <span class="kn">import</span> <span class="n">KEditListWidget</span>
+</pre></div>
+
+
+<p>When it should have had:</p>
+<div class="highlight"><pre>    <span class="kn">from</span> <span class="nn">PyKDE4.kdeui</span> <span class="kn">import</span> <span class="n">KEditListWidget</span>
+</pre></div>
+
+
+<p>After much digging, I found that an older version of pykdeuic4 apparently had <a href="https://bugs.kde.org/show_bug.cgi?id=183205">a bug</a> that caused this problem. So I did: <code>sudo apt-get install python-kde4</code></p>
+<p>Followed by: <code>sudo apt-get install python-kde4-dev</code></p>
+<p>Then, <code>pykdeuic4 -o outfile.py input.ui</code> rendered the import statements correctly and, magically, so did <code>pyuic4 -o outfile.py input.ui</code>. At first, I thought I just had an old version of python-kde4-dev but, I think I may just have not had it at all. I'm a little confused because the QT Designer preview deal worked fine before (and after) and it was just the code generation that was broken. At any rate, using apt-get to install those two packages fixed the problem.</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Jared Kibele</span>
+  </span>
+<time datetime="2013-09-23T00:00:00" pubdate>Mon 23 September 2013</time>  <span class="categories">
+    <a class="category" href="/tag/python.html">python</a>
+    <a class="category" href="/tag/pyqt.html">pyqt</a>
+    <a class="category" href="/tag/qt-designer.html">qt designer</a>
+    <a class="category" href="/tag/kde.html">kde</a>
+  </span>
+</p>    </footer>
   </article>
+
 </div>
 <aside class="sidebar">
   <section>
