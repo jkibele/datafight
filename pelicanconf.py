@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Jared Kibele'
 SITENAME = u'dataFight'
 SITEURL = 'http://datafight.com'
-SITESUBTITLE = 'struggling with my data, using data against my foes'
+SITESUBTITLE = 'struggling with my data, forcing it to answer my questions'
 
 TIMEZONE = 'Pacific/Auckland'
 
@@ -44,7 +44,7 @@ NOTEBOOK_DIR = '/home/jkibele/Ubuntu One/JobStuff/PhD/iPythonNotebooks'
 
 EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')
 
-STATIC_PATHS = [ 'extra/CNAME' ]
+STATIC_PATHS = [ 'extra/CNAME','images' ]
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     }
