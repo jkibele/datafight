@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting this Blog Working with IPython Notebook</title>
+  <title>dataFight - WaveWatchIII</title>
   <meta name="author" content="Jared Kibele">
 
 
@@ -1753,59 +1753,30 @@ init_mathjax();
 </ul></nav>
   <div id="main">
     <div id="content">
-<div>
-  <article class="hentry" role="article">
+<div class="blog-index">
+  		<article>
 <header>
-      <h1 class="entry-title">Getting this Blog Working with IPython Notebook</h1>
-      <p class="meta"><time datetime="2013-09-19T10:23:00" pubdate>Thu 19 September 2013</time></p>
+      <h1 class="entry-title">
+        <a href="/ww3-data.html">Getting WW3 Wave Data and Messing with it</a>
+      </h1>
+      <p class="meta"><time datetime="2013-10-23T10:20:00" pubdate>Wed 23 October 2013</time></p>
 </header>
 
-  <div class="entry-content"><p>I'm using IPython Notebook 1.1.0. in my work. I wanted to post some IPython stuff on a blog and found it rather difficult to do so on Blogger so I started digging around for an alternative. From what I can tell, static blog generators are the way to go for this sort of thing if you're geek enough to deal with the setup and ongoing operation. It's not as simple as Wordpress or Blogger but shouldn't be too bad if you're comfortable with Python and GitHub and whatnot. Basically, I decided that I'm geek enough.</p>
-<p>I started out following the directions I found <a href="http://themodernscientist.com/posts/2013/2013-06-02-my_octopelican_python_blog/">here</a>. However, this stuff changes pretty fast and it seems like things are a bit different now. The changes specified <a href="https://github.com/modernscientist/modernscientist.github.com/blob/master/notes/importing_ipython_notebooks_in_a_pelican_blog.md">here</a> are no longer needed. I installed pelican using the development version cloned from GitHub. The version installed by pip didn't work with the GitHub version of liquid tags. It took me a while to figure that out. Hopefully I can save someone else some time or at least save myself some time when I go to replicate this on my laptop.</p>
-<p>So, assuming you've got ipython 1.1.0 already, I guess the proceedure is:</p>
-<ol>
-<li>
-<p>Get pelican by doing <code>git clone https://github.com/getpelican/pelican.git</code>, then going to where pelican was cloned (<code>cd pelican</code>) and typing <code>python setup.py install</code>. Use <code>sudo python setup.py install</code> if you have permission problems.</p>
-</li>
-<li>
-<p>I'm using the Octopress template. To use that, go <a href="https://github.com/duilio/pelican-octopress-theme">clone it from GitHub</a>. Then do <code>sudo pelican-themes -i /path/to/pelican-octopress-theme/</code>.</p>
-</li>
-<li>
-<p>Go clone <a href="https://github.com/getpelican/pelican-plugins">pelican-plugins</a> and follow the directions in the <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid tags readme</a>.</p>
-</li>
-</ol></div>
-    <footer>
-<p class="meta">
-  <span class="byline author vcard">
-    Posted by <span class="fn">Jared Kibele</span>
-  </span>
-<time datetime="2013-09-19T10:23:00" pubdate>Thu 19 September 2013</time>  <span class="categories">
-    <a class="category" href="/tag/pelican.html">pelican</a>
-    <a class="category" href="/tag/publishing.html">publishing</a>
-    <a class="category" href="/tag/ipython-notebook.html">ipython notebook</a>
-  </span>
-</p>    </footer>
-  </article>
+  <div class="entry-content"><p>A colleague here at the lab is concerned about how some cyclone generated swell events might have affected her experements on the reef. She asked me to get some wave data and find out when the biggest swell events were within the time period of December 2012 to March 2013 were. Here's what I did with python to try and find an answer.</p></div>
+  <footer>
+    <a rel="full-article" href="/ww3-data.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+<div class="pagination">
 
-</div>
+  <br />
+</div></div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
           <a href="/ww3-data.html">Getting WW3 Wave Data and Messing with it</a>
-      </li>
-      <li class="post">
-          <a href="/kde-widgets-in-qt-designer.html">KDE Widgets in QT Designer</a>
-      </li>
-      <li class="post">
-          <a href="/getting-this-blog-working.html">Getting this Blog Working with IPython Notebook</a>
-      </li>
-      <li class="post">
-          <a href="/stats-chpt-5.html">Stats book chapter 5</a>
-      </li>
-      <li class="post">
-          <a href="/why-this-blog.html">Why does this blog exist?</a>
       </li>
     </ul>
   </section>
